@@ -1,4 +1,14 @@
 {
+  "name": "collaborative-code-editor",
+  "version": "1.0.0",
+  "scripts": {
+    "build:project": "npm run build --prefix project",
+    "build:backend": "npm run build --prefix backend",
+    "build": "npm run build:project && npm run build:backend",
+    "start": "npm start --prefix backend",
+    "dev:project": "npm run dev --prefix project",
+    "dev:backend": "npm run dev --prefix backend"
+  },
   "dependencies": {
     "@codemirror/basic-setup": "^0.20.0",
     "@codemirror/lang-javascript": "^6.2.4",

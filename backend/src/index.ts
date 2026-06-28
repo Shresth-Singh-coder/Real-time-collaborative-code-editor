@@ -32,10 +32,11 @@ const getAllConnectedClients = (roomId: string): Client[] => {
     }));
 };
 
-app.use(express.static("build"));
+const buildPath = path.join(__dirname, "..", "build");
+app.use(express.static(buildPath));
 
 app.use((req, res) => {
-    res.sendFile(path.join(__dirname, "build", "index.html"));
+    res.sendFile(path.join(buildPath, "index.html"));
 });
 
 io.on("connection", (socket: Socket) => {
